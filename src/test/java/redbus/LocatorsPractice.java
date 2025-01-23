@@ -28,12 +28,27 @@ public class LocatorsPractice {
         driver.findElement(By.className("form-check-input")).click();
         driver.findElement(By.id("mobile")).sendKeys("1234567890");
         String text = driver.findElement(By.tagName("h1")).getText();
-        System.out.printf(text);
+        System.out.println(text);
         // LinkText methods/locator can only be used for elements with anchor tags
 
-        String text1 = driver.findElement(By.linkText("Subjects:")).getText();
-        System.out.println(text1);
+        //String text1 = driver.findElement(By.linkText("Subjects:")).getText();
+        //System.out.println(text1);
         //driver.close();
+        //getTitle(), getCurrentUrl()
+        System.out.println("Title of the page is: " + driver.getTitle());
+        System.out.println("Current URL is: " +driver.getCurrentUrl());
+
+        System.out.printf("line1 ");
+        System.out.print("line3 ");
+        System.out.println("line2 ");
+
+
+
+
+
         driver.quit();
+        //int a = 1/0;
+        System.out.println("This is the end of the program");
+
     }
 }
