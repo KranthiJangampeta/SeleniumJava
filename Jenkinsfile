@@ -6,6 +6,10 @@ pipeline {
         maven 'Maven 3.6.3'
     }
 
+    parameters {
+        string(name: 'JOB_TYPE', defaultValue: 'fit', description: 'Type of job to run (fit, iat, uat)')
+    }
+
     stages {
         stage('Checkout') {
             steps {
@@ -15,6 +19,9 @@ pipeline {
         }
 
         stage('Build') {
+            when {
+                expression { params.JOB_TYPE == 'fit' || params.JOB_TYPE == 'iat' || params.JOB_TYPE == 'uat' }
+            }
             steps {
                 // Run Maven build
                 sh 'mvn clean install'
@@ -22,6 +29,9 @@ pipeline {
         }
 
         stage('Test') {
+            when {
+                expression { params.JOB_TYPE == 'fit' || params.JOB_TYPE == 'iat' || params.JOB_TYPE == 'uat' }
+            }
             steps {
                 // Run Maven tests
                 sh 'mvn test'
@@ -29,6 +39,9 @@ pipeline {
         }
 
         stage('Package') {
+            when {
+                expression { params.JOB_TYPE == 'fit' || params.JOB_TYPE == 'iat' || params.JOB_TYPE == 'uat' }
+            }
             steps {
                 // Package the application
                 sh 'mvn package'
@@ -36,6 +49,9 @@ pipeline {
         }
 
         stage('Deploy') {
+            when {
+                expression { params.JOB_TYPE == 'uat' }
+            }
             steps {
                 // Deploy the application (this is just an example, adjust as needed)
                 sh 'scp target/your-app.jar user@server:/path/to/deploy'
