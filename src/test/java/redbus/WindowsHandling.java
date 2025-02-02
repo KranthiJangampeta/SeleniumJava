@@ -29,7 +29,6 @@ public class WindowsHandling {
         String emailText = extractedText.split("at")[1].split(" ")[1];
         driver.switchTo().window(firstWindow);
         driver.findElement(By.name("username")).sendKeys(emailText);
-        //driver.quit();
-
+        driver.quit();
     }
 }
