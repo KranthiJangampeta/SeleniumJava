@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="tataMotors">
+    <test name="Market Only cars with First letter as 'N'">
+        <classes>
+            <class name="tataMotors.MarketingTeam">
+                <methods>
+                    <include name=".*N.*"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

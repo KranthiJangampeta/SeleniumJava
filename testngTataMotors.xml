@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Tata Motors">
+    <test name="Marketing Team">
+        <classes>
+            <class name="tataMotors.MarketingTeam">
+                <methods>
+                    <exclude name="marketNanoModel"></exclude>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Production Team">
+        <classes>
+            <class name="tataMotors.ProductionUnit">
+                <methods>
+                    <exclude name="produceNanoModel"></exclude>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Sales Team">
+        <classes>
+            <class name="tataMotors.SalesTeam">
+                <methods>
+                    <include name="sellNanoModel"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Service Team">
+        <classes>
+            <class name="tataMotors.ServicingTeam">
+                <methods>
+                    <include name="serviceNanoModel"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
