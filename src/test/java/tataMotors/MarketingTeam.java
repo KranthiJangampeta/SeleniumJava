@@ -1,9 +1,9 @@
 package tataMotors;
 
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class MarketingTeam {
-    @Test
+    @Test(groups = {"Smoke"})
     public void marketHarrierModel() {
         System.out.println("Marketing - Harrier is a great car");
     }
@@ -19,4 +19,22 @@ public class MarketingTeam {
     public void marketNexonModel() {
         System.out.println("Marketing - Nexon is a popular car");
     }
+    @BeforeMethod
+    public void tataMotorsMarketingLogin(){
+        System.out.println("````Logged in to Tata Motors Marketing Website````");
+    }
+    @AfterMethod
+    public void tataMotorsMarketingAppLogout(){
+        System.out.println("````Logged out of Tata Motors Marketing Website````");
+    }
+    @BeforeClass
+    public void tataMotorsMarketingAppLaunch(){
+        System.out.println("````Launched Tata Motors Marketing Website - www.tatamotors.com/marketing````");
+    }
+
+    @AfterClass
+    public void tataMotorsMarketingAppClose(){
+        System.out.println("````Closed Browser````");
+    }
+
 }
