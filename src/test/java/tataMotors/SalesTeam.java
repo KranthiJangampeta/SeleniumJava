@@ -1,5 +1,6 @@
 package tataMotors;
 
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class SalesTeam {
@@ -7,8 +8,11 @@ public class SalesTeam {
     public void sellHarrierModel() {
         System.out.println("Sales - Harrier is sold");
     }
+    @Parameters({"URL","UserName", "Password"})
     @Test(priority = 2)
-    public void sellNanoModel() {
+    public void sellNanoModel(String url, String username, String password) {
+        System.out.println(url);
+        System.out.println(username + " / "+ password);
         System.out.println("Sales - Nano is sold");
     }
     @Test(priority = 3)
