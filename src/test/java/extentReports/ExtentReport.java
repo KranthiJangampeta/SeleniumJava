@@ -25,7 +25,6 @@ public class ExtentReport {
         extentReportObj = new ExtentReports();
         extentReportObj.attachReporter(reporter);
         extentReportObj.setSystemInfo("Tester", "Lokesh");
-
     }
 
     @Test
